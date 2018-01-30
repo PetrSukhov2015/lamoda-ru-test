@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -46,7 +47,6 @@ public class LamodaTestSearch {
 		        //capabilities.setCapability("resetKeyboard", "true");
 		        capabilities.setCapability("appActivity", "com.lamoda.lite.businesslayer.activities.LauncherActivity");
 		        driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
-		        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		        //System.out.println("i am here");
 		    }
 		 
@@ -57,15 +57,25 @@ public class LamodaTestSearch {
 		 
 		    @Test
 		    public void search(){
-		    	
+		    	//MobileElement el0 = (MobileElement) driver.findElementById("com.lamoda.lite:id/flag_russia");
+			    //el0.click();
+		    	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		        
 		    	MobileElement el1 = (MobileElement) driver.findElementById("com.lamoda.lite:id/advantages_ok");
 			    el1.click();		        
 		        
 		    	MobileElement el2 = (MobileElement) driver.findElementById("com.lamoda.lite:id/image_search_later");
 		        //System.out.println(el2.getText());
 		        el2.click();
-		        MobileElement el3 = (MobileElement) driver.findElementById("com.lamoda.lite:id/toolbar_search");
-		        el3.click();
+		        //MobileElement el3 = (MobileElement) driver.findElementById("com.lamoda.lite:id/toolbar_search");
+		        //el3.click();
+		        MobileElement el4 = (MobileElement) driver.findElementByXPath("//android.widget.LinearLayout[@index='2']");
+		        //findElementById("com.lamoda.lite:id/toolbar_search");
+		        el4.click();
+		        
+		        MobileElement el5 = (MobileElement) driver.findElementByClassName("android.webkit.WebView");//.findElementById("com.lamoda.lite:id/banner_wrapper_view");
+		        System.out.println(el5.getText());
+		        
 		        //System.out.println(el3.getText());
 		        //*/
 		    	//AndroidView ap = new AndroidView(driver);
