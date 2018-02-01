@@ -10,13 +10,15 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class CommonAndroidPage {
 
-	private AppiumDriver driver;
+	protected AppiumDriver driver;
 
 	public CommonAndroidPage(AppiumDriver driver) {
 		//PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 		//PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-		PageFactory.initElements(new AppiumFieldDecorator(driver, 30, TimeUnit.SECONDS), this);
-		this.driver=(AppiumDriver)driver;
+		this.driver=driver;
+		//PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+		//PageFactory.initElements(new AppiumFieldDecorator(driver, 30, TimeUnit.SECONDS), this);
+		//this.driver=(AppiumDriver)driver;
 		/*
 		 * RemoteTestNG] detected TestNG version 6.13.1
 џэт 30, 2018 10:34:14 PM org.openqa.selenium.remote.ProtocolHandshake createSession
